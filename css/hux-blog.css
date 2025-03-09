@@ -1694,3 +1694,13 @@ img::-moz-selection {
 .no-scroll {
   overflow-y: hidden;
 }
+
+
+body {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.container, .container-fluid {
+  max-width: 1080px !important;
+}

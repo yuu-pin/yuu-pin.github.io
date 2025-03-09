@@ -9,6 +9,9 @@
         position: relative;
         background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}');
         background: {{ page.header-bg-css }};
+        max-width: 1080px; /* 您想要的固定宽度 */
+        margin: 0 auto; /* 居中显示 */
+        height: 494px; /* 可以根据需要调整高度 */
     }
 
     {% if page.header-mask %}
@@ -104,7 +107,6 @@
         {% else %}
         <div class="site-heading">
         {% endif %}
-          <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
           <span class="subheading">{{ page.description }}</span>
         </div>
       </div>
