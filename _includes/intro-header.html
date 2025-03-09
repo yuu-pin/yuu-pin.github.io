@@ -9,10 +9,30 @@
         position: relative;
         background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}');
         background: {{ page.header-bg-css }};
-        max-width: 1080px; /* 您想要的固定宽度 */
-        margin: 0 auto; /* 居中显示 */
-        height: 494px; /* 可以根据需要调整高度 */
+        max-width: 1080px;
+        margin: 0 auto 30px;
+        height: 494px;
     }
+
+    {% if page.header-mask %}
+    header.intro-header .header-mask{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(0,0,0, {{ page.header-mask }});
+    }
+    {% endif %}
+    
+    /* 只在主页应用的样式，不影响文章页 */
+    {% if page.layout == 'page' and page.url == '/' %}
+    @media (max-width: 768px) {
+        header.intro-header {
+            background-position: left center !important;
+        }
+    }
+    {% endif %}
+</style>
+{% endif %}
 
     {% if page.header-mask %}
     header.intro-header .header-mask{
@@ -114,3 +134,4 @@
   </div>
 </header>
 {% endif %}
+
