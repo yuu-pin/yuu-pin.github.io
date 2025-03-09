@@ -9,30 +9,22 @@
         position: relative;
         background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}');
         background: {{ page.header-bg-css }};
+        background-position: center; /* 默认居中显示背景 */
+        background-repeat: no-repeat;
+        background-size: cover; /* 或者使用contain，取决于您的需求 */
         max-width: 1080px;
         margin: 0 auto 30px;
         height: 494px;
     }
-
-    {% if page.header-mask %}
-    header.intro-header .header-mask{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background: rgba(0,0,0, {{ page.header-mask }});
-    }
-    {% endif %}
     
-    /* 只在主页应用的样式，不影响文章页 */
-    {% if page.layout == 'page' and page.url == '/' %}
+    /* 只在主页且窄屏设备上调整背景图片位置 */
+    {% if page.layout == 'page' and page.url == '/' or page.url == '/index.html' %}
     @media (max-width: 768px) {
         header.intro-header {
-            background-position: left center !important;
+            background-position: left center; /* 左边中部 */
         }
     }
     {% endif %}
-</style>
-{% endif %}
 
     {% if page.header-mask %}
     header.intro-header .header-mask{
