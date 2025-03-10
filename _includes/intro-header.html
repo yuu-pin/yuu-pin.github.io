@@ -9,16 +9,33 @@
         position: relative;
         background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}');
         background: {{ page.header-bg-css }};
-        background-position: center; /* 默认居中显示背景 */
+        background-position: center;
         background-repeat: no-repeat;
-        background-size: cover; /* 或者使用contain，取决于您的需求 */
+        background-size: cover;
         max-width: 1080px;
         margin: 0 auto 30px;
-        height: 494px;
+        /* 控制高度 - 首页使用更高的高度 */
+        {% if page.url == '/' or page.url == '/index.html' %}
+            {% if page.header-img or page.header-bg-css %}
+            height: 550px; /* 首页头图更高 */
+            {% else %}
+            height: 550px;
+            min-height: 550px;
+            padding: 30px 0;
+            {% endif %}
+        {% else %}
+            {% if page.header-img or page.header-bg-css %}
+            height: 600px; /* 其他页面保持600px */
+            {% else %}
+            height: auto;
+            min-height: 200px;
+            padding: 30px 0;
+            {% endif %}
+        {% endif %}
     }
     
-    /* 只在主页且窄屏设备上调整背景图片位置 */
-    {% if page.layout == 'page' and page.url == '/' or page.url == '/index.html' %}
+    /* 只在首页和page页面且窄屏设备上调整背景图片位置 */
+    {% if page.layout == 'page' %}
     @media (max-width: 768px) {
         header.intro-header {
             background-position: left center; /* 左边中部 */
@@ -34,6 +51,31 @@
         background: rgba(0,0,0, {{ page.header-mask }});
     }
     {% endif %}
+    
+    /* 为首页和分页页面设置副标题样式 */
+    .outside-heading {
+        text-align: center;
+        padding: 20px 0;
+        max-width: 1080px;
+        margin: 0 auto 30px;
+    }
+    .outside-heading .subheading {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #777;
+        font-weight: 300;
+    }
+    
+    /* 全局容器样式重置，确保正确居中 */
+    body {
+        overflow-x: hidden; /* 防止横向滚动条 */
+    }
+    
+    .post-container {
+        margin: 0 auto;
+        max-width: 960px;
+        padding: 0 15px;
+    }
 </style>
 {% endif %}
 
@@ -119,11 +161,15 @@
         {% else %}
         <div class="site-heading">
         {% endif %}
-          <span class="subheading">{{ page.description }}</span>
+          <!-- 这部分不会显示任何标题，所有页面的副标题都移到了背景图下方 -->
         </div>
       </div>
     </div>
   </div>
 </header>
-{% endif %}
 
+<!-- 为所有页面添加背景图外的副标题 -->
+<div class="outside-heading">
+  <span class="subheading">{{ page.description }}</span>
+</div>
+{% endif %}
