@@ -1,4 +1,4 @@
-[Hux Blog](https://huangxuan.me)
+[Yuu——Pin的博客](https://yuupin.github.io)
 ================================
 本项目fork自hxupro(https://github.com/Huxpro/huxpro.github.io)，做了一些微小的改动，请见谅。
 --------------------------------------------------
