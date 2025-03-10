@@ -94,4 +94,99 @@
             if (e.target.className == 'icon-bar') return;
             __HuxNav__.close();
         })
+        document.addEventListener('click', function (e) {
+            if (e.target == $toggle) return;
+            if (e.target.className == 'icon-bar') return;
+            __HuxNav__.close();
+        })
+        
+        // 这里添加你的新代码
+        document.addEventListener('DOMContentLoaded', function() {
+          // 获取导航栏和可能的背景元素
+          var navbar = document.querySelector('.navbar-custom');
+          var header = document.querySelector('.intro-header') || document.querySelector('header');
+          
+          if (navbar && header) {
+            // 创建一个隐藏的canvas来分析图像
+            var canvas = document.createElement('canvas');
+            var context = canvas.getContext('2d');
+            var navbarRect = navbar.getBoundingClientRect();
+            var headerComputedStyle = window.getComputedStyle(header);
+            var headerBgColor = headerComputedStyle.backgroundColor;
+            var headerBgImage = headerComputedStyle.backgroundImage;
+            
+            // 如果有背景图片，需要加载并分析
+            if (headerBgImage !== 'none') {
+              var img = new Image();
+              img.crossOrigin = "Anonymous";
+              img.onload = function() {
+                analyzeBackground(img);
+              };
+              // 提取背景图URL
+              var bgUrl = headerBgImage.replace(/url\(['"]?(.*?)['"]?\)/i, '$1');
+              img.src = bgUrl;
+            } 
+            // 如果只有背景色，直接分析
+            else if (headerBgColor !== 'rgba(0, 0, 0, 0)' && headerBgColor !== 'transparent') {
+              // 将RGB值转换为亮度
+              var color = headerBgColor.match(/\d+/g);
+              if (color && color.length >= 3) {
+                var r = parseInt(color[0]);
+                var g = parseInt(color[1]);
+                var b = parseInt(color[2]);
+                var brightness = (r * 299 + g * 587 + b * 114) / 1000;
+                setNavTextColor(brightness < 128);
+              }
+            }
+          }
+          
+          // 分析背景图像
+          function analyzeBackground(img) {
+            canvas.width = navbarRect.width;
+            canvas.height = navbarRect.height;
+            
+            // 在canvas上绘制header的对应区域
+            context.drawImage(img, 0, 0, img.width, img.height, 
+                             0, 0, canvas.width, canvas.height);
+            
+            // 获取像素数据
+            var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+            var pixels = imageData.data;
+            var totalBrightness = 0;
+            var pixelCount = 0;
+            
+            // 计算平均亮度
+            for (var i = 0; i < pixels.length; i += 4) {
+              var r = pixels[i];
+              var g = pixels[i + 1];
+              var b = pixels[i + 2];
+              
+              // 亮度计算公式 (RGB转YUV的Y值)
+              var brightness = (r * 299 + g * 587 + b * 114) / 1000;
+              totalBrightness += brightness;
+              pixelCount++;
+            }
+            
+            var avgBrightness = totalBrightness / pixelCount;
+            setNavTextColor(avgBrightness < 128);
+          }
+          
+          // 设置导航栏文字颜色
+          function setNavTextColor(isDark) {
+            // isDark为true表示背景暗，需要白色文字
+            // isDark为false表示背景亮，需要黑色文字
+            var textColor = isDark ? '#fff' : '#000';
+            var navLinks = navbar.querySelectorAll('.navbar-brand, .navbar-nav > li > a');
+            
+            navLinks.forEach(function(link) {
+              link.style.color = textColor;
+            });
+            
+            // 设置汉堡菜单颜色
+            var iconBars = navbar.querySelectorAll('.icon-bar');
+            iconBars.forEach(function(bar) {
+              bar.style.backgroundColor = textColor;
+            });
+          }
+        });
     </script>

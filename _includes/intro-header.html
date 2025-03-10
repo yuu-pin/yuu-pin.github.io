@@ -12,20 +12,23 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        max-width: 1080px;
+        max-width: 2000px;
         margin: 0 auto 30px;
         /* 控制高度 - 首页使用更高的高度 */
         {% if page.url == '/' or page.url == '/index.html' %}
             {% if page.header-img or page.header-bg-css %}
-            height: 550px; /* 首页头图更高 */
+            height: 700px; /* 首页头图更高 */
+            max-width: 2000px;
             {% else %}
-            height: 550px;
-            min-height: 550px;
+            height: 1000px;
+            min-height: 500px;
+            max-width: 2000px;
             padding: 30px 0;
             {% endif %}
         {% else %}
             {% if page.header-img or page.header-bg-css %}
-            height: 600px; /* 其他页面保持600px */
+            height: 800px; /* 其他页面保持800px */
+            max-width: 2000px;
             {% else %}
             height: auto;
             min-height: 200px;
@@ -34,15 +37,22 @@
         {% endif %}
     }
     
-    /* 只在首页和page页面且窄屏设备上调整背景图片位置 */
-    {% if page.layout == 'page' %}
+    /* 窄屏情况下统一主页和page页面背景图高度 */
     @media (max-width: 768px) {
         header.intro-header {
-            background-position: left center; /* 左边中部 */
+            height: 400px !important; /* 窄屏情况下统一高度 */
+        }
+    }
+    
+    /* 只在首页且窄屏设备上调整背景图片位置 */
+    {% if page.url == '/' or page.url == '/index.html' %}
+    @media (max-width: 768px) {
+        header.intro-header {
+            background-position: -200px center; /* 左边中部 */
         }
     }
     {% endif %}
-
+    
     {% if page.header-mask %}
     header.intro-header .header-mask{
         width: 100%;
@@ -76,10 +86,122 @@
         max-width: 960px;
         padding: 0 15px;
     }
+    
+    /* 向下滑动提示样式 */
+    .scroll-down-hint {
+        position: absolute;
+        bottom: 50px;
+        width: 100%;
+        text-align: center;
+        display: none; /* 默认不显示 */
+    }
+    
+    .scroll-down-hint span {
+        display: block;
+        margin-bottom: 10px;
+        color: #fff;
+        font-size: 14px;
+    }
+    
+    .arrow-down {
+        animation: bounce 2s infinite;
+        color: #fff;
+        font-size: 24px;
+    }
+    
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-20px);
+        }
+        60% {
+            transform: translateY(-10px);
+        }
+    }
+    
+    /* 只在首页显示向下滑动提示 */
+    {% if page.url == '/' or page.url == '/index.html' %}
+    .scroll-down-hint {
+        display: block;
+    }
+    
+    /* 宽屏设备下箭头向上移动150px */
+    @media (min-width: 769px) {
+        .scroll-down-hint {
+            bottom: 180px; /* 向上移动150px */
+            font-size: 18px;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+    }
+  
+    
+    /* 窄屏设备下居中显示，位置保持不变 */
+    @media (max-width: 768px) {
+        .scroll-down-hint {
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            bottom: 30px; /* 保持原位置不变 */
+        }
+    }
+    {% endif %}
 </style>
 {% endif %}
 
 {% if include.type == 'post' %}
+<style type="text/css">
+    /* 文章页面所有内容向左移动300px */
+    .post-container,
+    .navbar-custom .container,
+    .featured-tags-section,
+    .friends-section,
+    .short-about,
+    footer .container,
+    #tag_cloud,
+    .sidebar-container {
+        padding-left: -320px !important; /* 增加左侧内边距，为内容腾出空间 */
+        max-width: 70%;
+    }
+    
+
+    
+    /* 增加包含标题的容器宽度 */
+    .col-lg-8.col-lg-offset-2, 
+    .col-md-10.col-md-offset-1 {
+        width: 100%;
+        margin-left: 0;
+        overflow: visible;
+    }
+    
+    /* 确保在窄屏设备上内容不会移出视口 */
+    @media (max-width: 768px) {
+        .container,
+        .post-container,
+        .navbar-custom .container,
+        .featured-tags-section,
+        .friends-section,
+        .short-about,
+        footer .container,
+        #tag_cloud,
+        .sidebar-container {
+            padding-left: 15px !important; /* 恢复正常内边距 */
+        }
+        
+        .post-heading {
+            transform: none; /* 窄屏时不移动，保持居中 */
+        }
+        
+        .col-lg-8.col-lg-offset-2, 
+        .col-md-10.col-md-offset-1 {
+            width: auto;
+            margin-left: auto;
+        }
+    }
+</style>
+
 {% if page.header-style == 'text' %}
 <header class="intro-header style-text" >
 {% else %}
@@ -108,6 +230,16 @@
             </div>
         </div>
     </div>
+    
+    <!-- 只在首页显示向下箭头 -->
+    {% if page.url == '/' or page.url == '/index.html' %}
+    <div class="scroll-down-hint">
+        <span>向下滑动以查看</span>
+        <div class="arrow-down">
+            <i class="fa fa-chevron-down"></i>
+        </div>
+    </div>
+    {% endif %}
 </header>
 {% endif %}
 
@@ -147,6 +279,16 @@
             </div>
         </div>
     </div>
+    
+    <!-- 只在首页显示向下箭头 -->
+    {% if page.url == '/' or page.url == '/index.html' %}
+    <div class="scroll-down-hint">
+        <span>向下滑动以查看</span>
+        <div class="arrow-down">
+            <i class="fa fa-chevron-down"></i>
+        </div>
+    </div>
+    {% endif %}
 </header>
 {% endif %}
 
@@ -166,6 +308,16 @@
       </div>
     </div>
   </div>
+  
+  <!-- 只在首页显示向下箭头 -->
+  {% if page.url == '/' or page.url == '/index.html' %}
+  <div class="scroll-down-hint">
+    <span>向下滑动以查看</span>
+    <div class="arrow-down">
+        <i class="fa fa-chevron-down"></i>
+    </div>
+  </div>
+  {% endif %}
 </header>
 
 <!-- 为所有页面添加背景图外的副标题 -->
