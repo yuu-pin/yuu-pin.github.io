@@ -5,53 +5,33 @@
 
 {% if include.type == 'post' or include.type == 'page' %}
 <style type="text/css">
-    header.intro-header{
-        position: relative;
-        background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}');
-        background: {{ page.header-bg-css }};
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        max-width: 2000px;
-        margin: 0 auto 30px;
-        /* 控制高度 - 首页使用更高的高度 */
-        {% if page.url == '/' or page.url == '/index.html' %}
-            {% if page.header-img or page.header-bg-css %}
-            height: 700px; /* 首页头图更高 */
-            max-width: 2000px;
-            {% else %}
-            height: 1000px;
-            min-height: 500px;
-            max-width: 2000px;
-            padding: 30px 0;
-            {% endif %}
-        {% else %}
-            {% if page.header-img or page.header-bg-css %}
-            height: 800px; /* 其他页面保持800px */
-            max-width: 2000px;
-            {% else %}
-            height: auto;
-            min-height: 200px;
-            padding: 30px 0;
-            {% endif %}
-        {% endif %}
+    header.intro-header {
+    position: relative;
+    background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}');
+    background: {{ page.header-bg-css }};
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 2000px;
+    margin: 0 auto 30px;
+}
+
+/* 宽屏设备 - 高度为视口高度的一半 */
+@media (min-width: 769px) {
+    header.intro-header {
+        height: 50vh; /* 视口高度的50% */
+        min-height: 400px; /* 设置最小高度，防止过小 */
     }
-    
-    /* 窄屏情况下统一主页和page页面背景图高度 */
-    @media (max-width: 768px) {
-        header.intro-header {
-            height: 400px !important; /* 窄屏情况下统一高度 */
-        }
+}
+
+/* 窄屏设备 - 高度按比例缩放 */
+@media (max-width: 768px) {
+    header.intro-header {
+        height: 0;
+        padding-bottom: 52.4%; /* 16:9比例 - 如果您的图片是其他比例可以调整 */
+        min-height: 200px; /* 保证最小高度 */
     }
-    
-    /* 只在首页且窄屏设备上调整背景图片位置 */
-    {% if page.url == '/' or page.url == '/index.html' %}
-    @media (max-width: 768px) {
-        header.intro-header {
-            background-position: -200px center; /* 左边中部 */
-        }
-    }
-    {% endif %}
+}
     
     {% if page.header-mask %}
     header.intro-header .header-mask{
@@ -87,14 +67,6 @@
         padding: 0 15px;
     }
     
-    /* 向下滑动提示样式 */
-    .scroll-down-hint {
-        position: absolute;
-        bottom: 50px;
-        width: 100%;
-        text-align: center;
-        display: none; /* 默认不显示 */
-    }
     
     .scroll-down-hint span {
         display: block;
@@ -121,12 +93,6 @@
         }
     }
     
-    /* 只在首页显示向下滑动提示 */
-    {% if page.url == '/' or page.url == '/index.html' %}
-    .scroll-down-hint {
-        display: block;
-    }
-    
     /* 宽屏设备下箭头向上移动150px */
     @media (min-width: 769px) {
         .scroll-down-hint {
@@ -147,7 +113,6 @@
             bottom: 30px; /* 保持原位置不变 */
         }
     }
-    {% endif %}
 </style>
 {% endif %}
 
@@ -232,14 +197,6 @@
     </div>
     
     <!-- 只在首页显示向下箭头 -->
-    {% if page.url == '/' or page.url == '/index.html' %}
-    <div class="scroll-down-hint">
-        <span>向下滑动以查看</span>
-        <div class="arrow-down">
-            <i class="fa fa-chevron-down"></i>
-        </div>
-    </div>
-    {% endif %}
 </header>
 {% endif %}
 
@@ -281,14 +238,6 @@
     </div>
     
     <!-- 只在首页显示向下箭头 -->
-    {% if page.url == '/' or page.url == '/index.html' %}
-    <div class="scroll-down-hint">
-        <span>向下滑动以查看</span>
-        <div class="arrow-down">
-            <i class="fa fa-chevron-down"></i>
-        </div>
-    </div>
-    {% endif %}
 </header>
 {% endif %}
 
@@ -308,16 +257,6 @@
       </div>
     </div>
   </div>
-  
-  <!-- 只在首页显示向下箭头 -->
-  {% if page.url == '/' or page.url == '/index.html' %}
-  <div class="scroll-down-hint">
-    <span>向下滑动以查看</span>
-    <div class="arrow-down">
-        <i class="fa fa-chevron-down"></i>
-    </div>
-  </div>
-  {% endif %}
 </header>
 
 <!-- 为所有页面添加背景图外的副标题 -->
