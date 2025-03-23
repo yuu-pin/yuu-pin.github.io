@@ -31,6 +31,31 @@
         padding-bottom: 52.4%; /* 16:9比例 - 如果您的图片是其他比例可以调整 */
         min-height: 200px; /* 保证最小高度 */
     }
+    
+    /* 窄屏菜单不继承导航栏变色逻辑 */
+    .navbar-collapse {
+        background-color: #fff !important; /* 固定背景色 */
+    }
+    
+    .navbar-collapse .navbar-nav > li > a {
+        color: #404040 !important; /* 固定文字颜色 */
+    }
+    
+    .navbar-collapse .navbar-nav > li > a:hover,
+    .navbar-collapse .navbar-nav > li > a:focus {
+        color: #0085a1 !important; /* 悬停颜色 */
+    }
+    
+    /* 确保下拉菜单也有固定颜色 */
+    .navbar-collapse .dropdown-menu > li > a {
+        color: #404040 !important;
+    }
+    
+    .navbar-collapse .dropdown-menu > li > a:hover,
+    .navbar-collapse .dropdown-menu > li > a:focus {
+        color: #0085a1 !important;
+        background-color: #f8f8f8 !important;
+    }
 }
     
     {% if page.header-mask %}
@@ -67,6 +92,30 @@
         padding: 0 15px;
     }
     
+    /* 文章列表居中显示 */
+    .post-preview-container {
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .post-preview {
+        text-align: left;
+        max-width: 960px;
+        margin: 0 auto 30px;
+        padding: 0 15px;
+    }
+    
+    /* 首页文章列表调整 */
+    .post-list-container {
+        margin: 0 auto;
+        max-width: 960px;
+    }
+    
+    /* 确保分页控件居中 */
+    .pager {
+        text-align: center;
+        margin: 20px 0;
+    }
     
     .scroll-down-hint span {
         display: block;
@@ -102,7 +151,6 @@
             font-weight: 500;
         }
     }
-  
     
     /* 窄屏设备下居中显示，位置保持不变 */
     @media (max-width: 768px) {
@@ -113,57 +161,39 @@
             bottom: 30px; /* 保持原位置不变 */
         }
     }
+    
+    /* 隐藏底部FEATURED TAGS和FRIENDS部分 */
+    .featured-tags-section,
+    .friends-section,
+    #featured-tags,
+    #friends-list {
+        display: none !important;
+    }
 </style>
 {% endif %}
 
 {% if include.type == 'post' %}
 <style type="text/css">
-    /* 文章页面所有内容向左移动300px */
-    .post-container,
-    .navbar-custom .container,
-    .featured-tags-section,
-    .friends-section,
-    .short-about,
-    footer .container,
-    #tag_cloud,
-    .sidebar-container {
-        padding-left: -320px !important; /* 增加左侧内边距，为内容腾出空间 */
-        max-width: 70%;
-    }
-    
-
-    
-    /* 增加包含标题的容器宽度 */
-    .col-lg-8.col-lg-offset-2, 
-    .col-md-10.col-md-offset-1 {
+    /* 文章页面样式 */
+    .post-container {
         width: 100%;
-        margin-left: 0;
-        overflow: visible;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 20px;
     }
     
-    /* 确保在窄屏设备上内容不会移出视口 */
+    /* 窄屏设备下更宽的内容区域 */
     @media (max-width: 768px) {
-        .container,
-        .post-container,
-        .navbar-custom .container,
-        .featured-tags-section,
-        .friends-section,
-        .short-about,
-        footer .container,
-        #tag_cloud,
-        .sidebar-container {
-            padding-left: 15px !important; /* 恢复正常内边距 */
+        .post-container {
+            width: 92%;
+            padding-left: 4% !important; 
+            padding-right: 4% !important;
         }
-        
-        .post-heading {
-            transform: none; /* 窄屏时不移动，保持居中 */
-        }
-        
-        .col-lg-8.col-lg-offset-2, 
-        .col-md-10.col-md-offset-1 {
-            width: auto;
-            margin-left: auto;
-        }
+    }
+    
+    /* 确保内容溢出处理 */
+    .post-container .post-content {
+        overflow-wrap: break-word;
     }
 </style>
 
@@ -238,6 +268,24 @@
 {% endif %}
 
 {% if include.type == 'page' %}
+<style type="text/css">
+    /* 页面侧边栏样式 - 保留但目前不使用 */
+    .sidebar-container {
+        display: none; /* 隐藏所有侧边栏内容 */
+    }
+    
+    /* 页面内容居中 */
+    .page-container {
+        margin: 0 auto;
+        max-width: 960px;
+        text-align: center;
+    }
+    
+    .page-container .page-content {
+        text-align: left;
+    }
+</style>
+
 <header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
   <div class="header-mask"></div>
   <div class="container">
