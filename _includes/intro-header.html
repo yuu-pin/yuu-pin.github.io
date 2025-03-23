@@ -31,31 +31,6 @@
         padding-bottom: 52.4%; /* 16:9比例 - 如果您的图片是其他比例可以调整 */
         min-height: 200px; /* 保证最小高度 */
     }
-    
-    /* 窄屏菜单不继承导航栏变色逻辑 */
-    .navbar-collapse {
-        background-color: #fff !important; /* 固定背景色 */
-    }
-    
-    .navbar-collapse .navbar-nav > li > a {
-        color: #404040 !important; /* 固定文字颜色 */
-    }
-    
-    .navbar-collapse .navbar-nav > li > a:hover,
-    .navbar-collapse .navbar-nav > li > a:focus {
-        color: #0085a1 !important; /* 悬停颜色 */
-    }
-    
-    /* 确保下拉菜单也有固定颜色 */
-    .navbar-collapse .dropdown-menu > li > a {
-        color: #404040 !important;
-    }
-    
-    .navbar-collapse .dropdown-menu > li > a:hover,
-    .navbar-collapse .dropdown-menu > li > a:focus {
-        color: #0085a1 !important;
-        background-color: #f8f8f8 !important;
-    }
 }
     
     {% if page.header-mask %}
