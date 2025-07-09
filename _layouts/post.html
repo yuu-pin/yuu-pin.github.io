@@ -12,7 +12,6 @@ layout: default
                 col-lg-8 col-lg-offset-1
                 col-md-10 col-md-offset-1
                 post-container">
-
                 {% if page.multilingual %}
                     {% include multilingual-sel.html %}
                 {% endif %}
@@ -57,7 +56,6 @@ layout: default
                 visible-lg-block
                 sidebar-container
                 catalog-container">
-
                 <div class="side-catalog">
                     <hr class="hidden-sm hidden-xs">
                     <h5>
@@ -72,7 +70,6 @@ layout: default
                 col-lg-8 col-lg-offset-1
                 col-md-10 col-md-offset-1
                 sidebar-container">
-
                 {% include featured-tags.html bottom=true %}
 
                 {% include friends.html %}
@@ -138,18 +135,18 @@ layout: default
 <style type="text/css">
     /* 文章页面样式 */
     .post-container {
+        /* 【修改4】: 删除了这里的 margin: 0 auto; 属性，以解决布局冲突 */
         width: 100%;
         max-width: 960px;
-        margin: 0 auto;
         padding: 0 20px;
     }
     
     /* 窄屏设备下更宽的内容区域 */
-    @media (max-width: 768px) {
+    @media (max-width: 992px) { /* 将断点从768px改为992px，以匹配md网格 */
         .post-container {
-            width: 92%;
-            padding-left: 4% !important; 
-            padding-right: 4% !important;
+            width: 100%; /* 在中等屏幕下，让bootstrap的offset来控制居中 */
+            padding-left: 15px !important; 
+            padding-right: 15px !important;
         }
     }
     
@@ -168,9 +165,9 @@ layout: default
     }
     
     /* 响应式调整 */
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
         .catalog-container {
-            top: 60px;
+            display: none; /* 确保在中等屏幕及以下隐藏 */
         }
     }
 </style>
