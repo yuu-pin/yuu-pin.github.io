@@ -160,15 +160,31 @@
     /* 窄屏设备下更宽的内容区域 */
     @media (max-width: 768px) {
         .post-container {
-            width: 97%;
-            padding-left: 1.5% !important; 
-            padding-right: 1.5% !important;
+            width: 92%;
+            padding-left: 4% !important; 
+            padding-right: 4% !important;
         }
     }
     
     /* 确保内容溢出处理 */
     .post-container .post-content {
         overflow-wrap: break-word;
+    }
+    
+    /* catalog样式 */
+    .catalog-container {
+        position: sticky;
+        top: 70px;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+        z-index: 100;
+    }
+    
+    /* 响应式调整 */
+    @media (max-width: 768px) {
+        .catalog-container {
+            top: 60px;
+        }
     }
 </style>
 
