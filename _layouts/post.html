@@ -5,78 +5,78 @@ layout: default
 {% include intro-header.html type='post' %}
 
 <article>
-    <div class="container">
-        <div class="row">
+  <div class="container">
+    <!-- 主体内容 + 目录区域 -->
+    <div class="row">
 
-            
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+      <!-- 正文内容区域 -->
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
 
+        {% if page.multilingual %}
+          {% include multilingual-sel.html %}
+        {% endif %}
 
-                {% if page.multilingual %}
-                    {% include multilingual-sel.html %}
-                {% endif %}
+        {{ content }}
 
-				{{ content }}
+        <hr style="visibility: hidden;">
 
-                <hr style="visibility: hidden;">
-                <ul class="pager">
-                    {% if page.previous.url %}
-                    <li class="previous">
-                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
-                        Previous<br>
-                        <span>{{page.previous.title}}</span>
-                        </a>
-                    </li>
-                    {% endif %}
-                    {% if page.next.url %}
-                    <li class="next">
-                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
-                        Next<br>
-                        <span>{{page.next.title}}</span>
-                        </a>
-                    </li>
-                    {% endif %}
-                </ul>
-                <hr style="visibility: hidden;">
+        <ul class="pager">
+          {% if page.previous.url %}
+          <li class="previous">
+            <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
+              Previous<br>
+              <span>{{page.previous.title}}</span>
+            </a>
+          </li>
+          {% endif %}
+          {% if page.next.url %}
+          <li class="next">
+            <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
+              Next<br>
+              <span>{{page.next.title}}</span>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
 
-                {% if site.disqus_username %}
-                <div class="comment">
-                    <div id="disqus_thread" class="disqus-thread"></div>
-                </div>
-                {% endif %}
+        <hr style="visibility: hidden;">
 
-                {% if site.netease_comment %}
-                <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-                {% endif %}
-            </div>  
-
-    {% unless page.no-catalog %}
-            <div class="
-                col-lg-3
-                visible-lg-block
-                sidebar-container
-                catalog-container">
-
-                <div class="side-catalog">
-                    <hr class="hidden-sm hidden-xs">
-                    <h5>
-                        <a class="catalog-toggle" href="#">CATALOG</a>
-                    </h5>
-                    <ul class="catalog-body"></ul>
-                </div>
-            </div>
-        {% endunless %}
-
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container">
-
-
-                {% include featured-tags.html bottom=true %}
-
-                {% include friends.html %}
-            </div>
+        {% if site.disqus_username %}
+        <div class="comment">
+          <div id="disqus_thread" class="disqus-thread"></div>
         </div>
+        {% endif %}
+
+        {% if site.netease_comment %}
+        <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+        {% endif %}
+
+      </div>
+
+      <!-- 目录区域（仅大屏显示） -->
+      {% unless page.no-catalog %}
+      <div class="col-lg-3 visible-lg-block sidebar-container catalog-container">
+        <div class="side-catalog">
+          <hr class="hidden-sm hidden-xs">
+          <h5><a class="catalog-toggle" href="#">CATALOG</a></h5>
+          <ul class="catalog-body"></ul>
+        </div>
+      </div>
+      {% endunless %}
+
+    </div> <!-- /.row -->
+
+    <!-- 额外信息区域（标签+友链）另起一行 -->
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container">
+        {% include featured-tags.html bottom=true %}
+        {% include friends.html %}
+      </div>
     </div>
+
+  </div> <!-- /.container -->
 </article>
+
 
 {% if page.mathjax %}
   {% include mathjax_support.html %}
