@@ -154,43 +154,81 @@ layout: default
     }
 </style>
 
+<!-- 强制重置文章页面样式 -->
 <style type="text/css">
-    /* 文章页面样式 */
-    .post-container {
-        width: 100%;
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 0 20px;
+    /* 重置所有可能的冲突样式 */
+    article .container .row .post-container {
+        width: 100% !important;
+        max-width: 960px !important;
+        margin: 0 auto !important;
+        padding: 0 20px !important;
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
     }
     
-    /* 窄屏设备下更宽的内容区域 */
+    /* 确保Bootstrap列的正确行为 */
+    .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1.post-container {
+        width: 66.66666667% !important;
+        margin-left: 16.66666667% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    /* 窄屏设备样式 */
     @media (max-width: 768px) {
-        .post-container {
-            width: 92%;
-            padding-left: 4% !important; 
-            padding-right: 4% !important;
+        article .container .row .post-container,
+        .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1.post-container {
+            width: 92% !important;
+            margin-left: 4% !important;
+            margin-right: 4% !important;
+            padding-left: 15px !important;
+            padding-right: 15px !important;
         }
     }
     
     /* 确保内容溢出处理 */
-    .post-container .post-content {
-        overflow-wrap: break-word;
+    .post-container .post-content,
+    .post-container p,
+    .post-container div {
+        overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
     }
     
-    /* 这里添加catalog样式 */
+    /* Catalog容器样式 */
     .catalog-container {
-        position: sticky;
-        top: 70px;
-        max-height: calc(100vh - 80px);
-        overflow-y: auto;
-        z-index: 100;
+        position: sticky !important;
+        top: 70px !important;
+        max-height: calc(100vh - 80px) !important;
+        overflow-y: auto !important;
+        z-index: 100 !important;
+    }
+    
+    /* 侧边栏容器重置 */
+    .sidebar-container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
     }
     
     /* 响应式调整 */
     @media (max-width: 768px) {
         .catalog-container {
-            top: 60px;
+            top: 60px !important;
         }
+    }
+    
+    /* 确保article容器不会影响布局 */
+    article {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    article .container {
+        width: 100% !important;
+        max-width: 1170px !important;
+        margin: 0 auto !important;
     }
 </style>
 {% endif %}
