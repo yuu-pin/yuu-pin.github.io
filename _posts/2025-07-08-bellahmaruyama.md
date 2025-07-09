@@ -3,7 +3,7 @@ layout:     post
 title:      "新教徒的想象力：贝拉、丸山真男和日本思想研究"
 date:       2025-07-08 23:43:00
 author:     "YuuPin"
-header-img: "acg,gy_04.jpg"
+header-img: "04.png"
 catalog: true
 tags: 政治研究
 ---
@@ -126,75 +126,75 @@ THE PROTESTANT IMAGINATION: ROBERT BELLAH, MARUYAMA MASAO AND THE STUDY OF JAPAN
  Names of Japanese authors whose work appears principally in Japanese or in translation are given here in traditional order: family name first. Names of authors who write principally in English are given in Western order.
 
 [^1]: This essay was originally prepared for a panel, “Maruyama Masao, Political Philosopher,” at the International Political Science Association, Fukuoka, Japan, July 2006. I revised the text following Robert Bellah’s death in July 2013 to take account of his final work and as a way of coming to terms with his unexpected loss. It was subsequently presented at a 2016 symposium held at the Maruyama Masao Center for the History of Ideas (Tokyo Women’s Christian University) and appeared in the Center’s Bulltetin (March 2018). It has been rewritten and considerably expanded for its publication here.
-    
+
 [^2]: Maruyama Masao, review of Tokugawa Religion, as translated by Tatsuo Arima (unpublished MS), 48. I am grateful to Robert Bellah for first making this translation available to me. Maruyama’s review was originally published in Kokka Gakkai zasshi 72, no. 4 (April 1958), and reprinted in Maruyama Masao shū [Collected Works of Maruyama Masao] (Iwanami Shoten, 1995), 7: 253–89.
-    
+
 [^3]: Thus, the front cover of Robert Bellah’s Imagining Japan (University of California Press, 2003) identifies him as “the co-author of Habits of the Heart.”
-    
+
 [^4]: Two Lectures by Robert N. Bellah: The Maruyama Lecture and Seminar 2007 (Center for Japanese Studies, University of California, Berkeley, 2007).
-    
+
 [^5]: The passage from Masao Miyoshi is taken from his Accomplices of Silence: The Modern Japanese Novel (University of California Press, 1975), 79; quoted in “Baigan and Sorai: Continuities and Discontinuities in Eighteenth Century Japanese Thought,” in Japanese Thought in the Tokugawa Period, ed. Tetsuo Najita and Irwin Scheiner (University of Chicago Press, 1978), 150. Other relevant works by Miyoshi include: The Divided Self: A Perspective on the Literature of the Victorians (New York University Press, 1969), and As We Saw Them: The First Japanese Embassy to the United States (University of California Press, 1979; 2nd ed., Kodansha International, 1994). The passage from Ishida Baigan can be found in Robert Bellah, Tokugawa Religion: The Values of Preindustrial Japan (Free Press, 1957), 210.
-    
+
 [^6]: Note the following observation made by the late John Berger, speaking of the Fayum portraits painted in the first century CE by Greek Egyptian artists: “…the pictorial choices open to the painter were minute; the prescribed form very strict. This is paradoxically why, before the greatest of them, one is aware of enormous painterly energy. The stakes were high, the margin narrow. And in art these are the conditions which make for energy.” Joh Berger, Portraits: John Berger on Artists (Verso, 2015), 9.
-    
+
 [^7]: Maruyama Masao to Ienaga Saburō, in Maruyama Masao shokanshū [Maruyama Masao Collected Letters] (Misuzu Shobō, 2004), 3:18. The nenbutsu is a prayer of praise to Amida (Amitabha) Buddha, who had vowed to save every sentient creature.
-    
+
 [^8]: The Tannishō (literally, “Lamentation over Departures”) is a collection of Shinran’s sayings along with refutations of specific heresies already prevalent among his followers. Its compilation is attributed by consensus to Shinran’s disciple Yuien-bō. Shinran’s radical fideism is captured in his famous paradox: “Even a good person can attain birth in the Pure Land, so it goes without saying that an evil person will” (Tannishō 3:1–2).
-    
+
 [^9]: “became the nucleus”: Katō Shūichi, History of Japanese Literature: The First Thousand Years (Kodansha International, 2002), 215ff. Emphasis in original. Ienaga Saburō’s key work in this connection is Nihon shisōshi ni okeru hitei no ronri no hattatsu [The Development of the Logic of Negation in the History of Japanese Thought] (1940). Bellah also wrote appreciatively and at length on this work. See “Ienaga Saburō and the Search for Meaning in Modern Japan,” in Changing Japanese Attitudes toward Modernization, ed. M. Jansen (Princeton University Press, 1965), 369–423, esp. 378–400; the essay is repr. in Bellah, Imagining Japan (78–113).
-    
+
 [^10]: For the lecture see Maruyama Masao kōgiroku [University Lectures of Maruyama Masao], vol. 4, Nihon seiji shisōshi 1964 [History of Japanese Political Thought 1964] (Tokyo Daigaku Shuppankai, 2004), 234–52.
-    
+
 [^11]: Maruyama Masao, Jikonai taiwa [Interior Dialogues] (Misuzu Shobō, 1998), 51. “Radicalism” is Maruyama’s katakana gloss for sayokushugi.
-    
+
 [^12]: I thank Hiraishi Naoaki for first emphasizing to me Maruyama’s deep sense of “sin.” Personal communication, July 2004.
-    
+
 [^13]: Maruyama Masao, “Shisōshi no hōhō o mosaku shite—Hitotsu no kaisō” [In Search of a Method for Intellectual History—A Memoir], Nagoya Daigaku hōsei ronshū, no. 77 (September 1978): 2.
-    
+
 [^14]: Thatcher’s pronouncement, her most famous, dates from a 1987 interview with Woman’s Own that was later amplified in the Sunday Times. See the original interview transcript on the website of the Margaret Thatcher Foundation (www.margaretthatcher.org/speeches/). The relevant passages read: “I think we have gone through a period when too many children and people have been given to understand ‘I have a problem, it is the Government’s job to cope with it!’ or ‘I have a problem, I will go and get a grant to cope with it!’ ‘I am homeless, the Government must house me!’ and so they are casting their problems on society and who is society? There is no such thing! There are individual men and women and there are families and no government can do anything except through people and people look to themselves first […] There is no such thing as society. There is the living tapestry of men and women and people and the beauty of that tapestry and the quality of our lives will depend upon how much each of us is prepared to take responsibility for ourselves and each of us prepared to turn round and help by our own efforts those who are unfortunate.”
-    
+
 [^15]: On Simone Weil, see her Waiting on God (Harper Torchbooks ed., 1973), 61–83, 85–87, 94–98; also Jean-Marie Perrin and Gustave Thibon, Simone Weil as We Knew Her (1953; Routledge, 2003), 146–60; Richard Rees, Simone Weil: A Sketch for a Portrait (Oxford, 1966), 46–47. Note also her comment, in Gravity and Grace: “To contemplate the social scene is as effective a purification as to withdraw from the world, and that is why I have not been wrong in mixing for so long a time in politics” (1952; Routledge ed., 1995), xvi, 146.
-    
+
 [^16]: Despite their rejection of emperor worship as idolatrous, Mukyōkai figures were not hostile to the monarchy. Uchimura was certainly not. One of the sharp dividing lines between Maruyama and Nanbara (along with Yanaihara) was the latter’s intense veneration of the emperor. This was a highly idealized, demythologized and humanized emperor, but nonetheless unacceptable to Maruyama under any circumstances. It is to be noted, on the other hand, that Nanbara did not wait until August 1945 to begin this demythologizing. While acknowledging the traditional identification of the emperor as arahitogami, Nanbara stressed that the “organic unity” between the Japanese emperor and his people stemmed from the “realistic” relation between them, one based on fear and affection directed toward the sovereign as the nucleus of a familial national community with natural, historical origins. See Nanbara Shigeru, “Gendai no seiji risō to Nihon seishin” [Contemporary Political Ideals and the Japanese Spirit] (1938) in Nanbara Shigeru chosakushū [Collected Works of Nanbara Shigeru] (Iwanami Shoten, 1974), 3: 111–13.
-    
+
 [^17]: Maruyama Masao, “Ningen to seiji” [Man and Politics] (1948), in Maruyama Masao shū, 3: 220; on “invisible authority”: statement by Maruyama in round-table, “Maruyama Masao shi o kakonde—Chosha to kataru” [Keeping Company with Maruyama Masao—Speaking with the Author] (Tenbō, July 1966), in Maruyama Masao zadan [Maruyama Masao in Conversation] (Iwanami Shoten, 1998), 5: 315. See also Karube Tadashi, Maruyama Masao—Riberarisuto no shōzō [Maruyama Masao: Portrait of a Liberal] (Iwanami Shinsho, 2006).
-    
+
 [^18]: For a recent essay comparing Bellah and Maruyama (focusing on their conceptions of modernization), see Yamamoto Tomohiro, “Robāto N. Berā no Nihon kindaika ron—Maruyama Masao ni yoru hihan o chūshin ni” [Robert Bellah on Modernization—with a Focus on Maruyama’s Critique], Shakaigaku kenkyū, no. 76 (November 2004): 161–87. I am grateful to Shimizu Yasuhisa for bringing this article to my attention.
-    
+
 [^19]: Robert N. Bellah, Tokugawa Religion (Beacon Press, 1985), xii.
-    
+
 [^20]: Bellah, Tokugawa Religion, 105–6.
-    
+
 [^21]: See Robert N. Bellah, “To the Editor,” New York Review of Books (February 10, 2005); on the passport issue: Bellah, personal communication, June 2006.
-    
+
 [^22]: Maruyama Masao, Studies in the Intellectual History of Tokugawa Japan (Princeton/Tokyo University Press, 1979). The essays that make up this book were written during World War II. To have shown that “even the most monolithic of systems contains within it the inherent necessity for its own collapse” represented nothing less, Maruyama later wrote, than “the salvation of my soul.” Maruyama Masao, Nihon seiji shisōshi kenkyū (Tokyo Daigaku Shuppankai, 1952), 8.
-    
+
 [^23]: Maruyama Masao, review of Tokugawa Religion (Arima trans.), 37, 40, 41, 42–43, 44, 46. Cf. Maruyama’s original in Maruyama Masao shū, 7: 281, 283, 284, 285, 287–88.
-    
+
 [^24]: Robert N. Bellah, “Reflections on the Protestant Ethic Analogy in Asia” (1962), in Robert N. Bellah, Beyond Belief: Essays on Religion in a Post-Traditional World (Harper & Row, 1976), 53–63, esp. 57–58.
-    
+
 [^25]: See “Values and Social Change in Modern Japan” (1961) in Beyond Belief, 118–45; quote from 139; also “Continuity and Change in Japanese Society” (1971) in Robert N. Bellah, Imagining Japan: The Japanese Tradition and Its Modern Interpretation (University of California Press, 2003), 184–208.
-    
+
 [^26]: Robert N. Bellah, “Baigan and Sorai: Continuities and Discontinuities in Eighteenth Century Japanese Thought,” in Japanese Thought in the Tokugawa Period, ed. Tetsuo Najita and Irwin Scheiner (University of Chicago Press, 1978), 137–52.
-    
+
 [^27]: Note in this connection Maruyama’s own assessment. At a regular meeting of the Seitō to itan (Orthodoxy and Heresy) research group in October 1989, he remarked: “Bellah proposed his notion of ‘civic religion’ […] as an attempt to stem the relentless flood of social relativism and the social decay and pathological phenomena that accompany it. As such it can be understood as an American version of the movement to ‘clarify the national polity’” that had effectively purged Japanese academia of liberal thought in the mid-1930s. Maruyama continued, “I said to Bellah: isn’t your idea just like the ‘clarify the national polity movement?’ In reply, he just laughed out loud—but he certainly didn’t deny it.” See “O-seitō to L-seitō (fukumu kokutairon),” transcript of remarks, October 23, 1989. Maruyama Bunko item #720–22, 35.
-    
+
 [^28]: “ferocious, disillusioned”: Jeffrey Alexander (Yale University), personal communication.
-    
+
 [^29]: See Robert N. Bellah, “Civil Religion in America” (1966), in Beyond Belief, 168–89; “Flaws in the Protestant Code: Some Religious Sources of America’s Troubles,” presented at Graduate Theological Union, Berkeley, May 1999; “75 Years,” South Atlantic Quarterly (Special Issue, Dissent from the Homeland: Essays after September 11) 102, no. 2 (Spring, 2002): 253–65; “What Is Axial about the Axial Age?” Archives Européennes de Sociologie 46, no. 1 (2005): 69–89.
-    
+
 [^30]: For the “conversion” language, see Religion in Human Evolution (Belknap Press of Harvard University Press, 2011), 45, 47. Also the introduction to Beyond Belief, passim.
-    
+
 [^31]: The following account of the Seitō to itan project is based on Ishida Takeshi, “Seitō to itan wa naze mikan ni owatta ka” [Why Did the Orthodoxy and Heresy Project End Unfinished?], in Ishida Takeshi, Maruyama Masao to no taiwa [Dialogues with Maruyama Masao] (Misuzu Shobō, 2005), 36–93, with supplementary reference to Karube, Maruyama Masao. Neither Ishida nor Karube discusses the Maruyama/Bellah relationship.
-    
+
 [^32]: “dogma”: Maruyama, Jikonai taiwa, 172; “disease”: Maruyama Masao, “A Critique of De-Stalinization” (1956) in Maruyama Masao, Thought and Behavior in Modern Japanese Politics (Oxford University Press, 1969), 190; followers of Trotsky: Maruyama, statement in Sengo Nihon no kakushin shisō [Renovationist Thought in Postwar Japan] (Gendai no Rironsha, 1983), 124.
-    
+
 [^33]: See Matsushita Keiichi, “Taishū tennōsei ron” [On the Emperor system for the Masses] (1959), repr. in Matsushita Keiichi, Sengo seiji no rekishi to shisō [History and Thought in Postwar Politics] (Chikuma Gakugei Bunko, 1994), 61–112.
-    
+
 [^34]: See Ishida, “Seitō to itan,” 54ff.; Karube, Maruyama Masao, 184–86.
-    
+
 [^35]: See Maruyama Masao, “Kaikoku” [The Opening of the Country, 1959], in Maruyama Masao shū, 8:45–86.
-    
+
 [^36]: Natsume Sōseki, “My Individualism,” tr. Jay Rubin, in Monumenta Nipponica 34, no. 1 (1979): 45.
-    
+
 [^37]: Bellah, review of Maruyama, Studies in the Intellectual History of Tokugawa Japan, in Imagining Japan, 146.
