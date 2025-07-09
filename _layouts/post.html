@@ -8,61 +8,56 @@ layout: default
     <div class="container">
         <div class="row">
 
-            <div class="
+    <div class="
                 col-lg-8 col-lg-offset-1
-                col-md-10 col-md-offset-1">
+                col-md-10 col-md-offset-1
+                post-container">
 
-                <div class="post-container">
+                {% if page.multilingual %}
+                    {% include multilingual-sel.html %}
+                {% endif %}
 
-                    {% if page.multilingual %}
-                        {% include multilingual-sel.html %}
+				{{ content }}
+
+                <hr style="visibility: hidden;">
+                <ul class="pager">
+                    {% if page.previous.url %}
+                    <li class="previous">
+                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
+                        Previous<br>
+                        <span>{{page.previous.title}}</span>
+                        </a>
+                    </li>
                     {% endif %}
-
-                    {{ content }}
-
-                    <hr style="visibility: hidden;">
-                    <ul class="pager">
-                        {% if page.previous.url %}
-                        <li class="previous">
-                            <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
-                            Previous<br>
-                            <span>{{page.previous.title}}</span>
-                            </a>
-                        </li>
-                        {% endif %}
-                        {% if page.next.url %}
-                        <li class="next">
-                            <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
-                            Next<br>
-                            <span>{{page.next.title}}</span>
-                            </a>
-                        </li>
-                        {% endif %}
-                    </ul>
-                    <hr style="visibility: hidden;">
-
-                    {% if site.disqus_username %}
-                    <div class="comment">
-                        <div id="disqus_thread" class="disqus-thread"></div>
-                    </div>
+                    {% if page.next.url %}
+                    <li class="next">
+                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
+                        Next<br>
+                        <span>{{page.next.title}}</span>
+                        </a>
+                    </li>
                     {% endif %}
+                </ul>
+                <hr style="visibility: hidden;">
 
-                    {% if site.netease_comment %}
-                    <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-                    {% endif %}
+                {% if site.disqus_username %}
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
                 </div>
+                {% endif %}
 
-                <div class="sidebar-container">
-                    {% include featured-tags.html bottom=true %}
-                    {% include friends.html %}
-                </div>
-            </div>
+                {% if site.netease_comment %}
+                <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+                {% endif %}
+            </div>  
 
-            {% unless page.no-catalog %}
+    {% unless page.no-catalog %}
             <div class="
                 col-lg-3
                 visible-lg-block
+                sidebar-container
                 catalog-container">
+
                 <div class="side-catalog">
                     <hr class="hidden-sm hidden-xs">
                     <h5>
@@ -71,8 +66,17 @@ layout: default
                     <ul class="catalog-body"></ul>
                 </div>
             </div>
-            {% endunless %}
+        {% endunless %}
 
+    <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                {% include featured-tags.html bottom=true %}
+
+                {% include friends.html %}
+            </div>
         </div>
     </div>
 </article>
@@ -83,9 +87,11 @@ layout: default
 
 {% if site.disqus_username %}
 <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "{{site.disqus_username}}";
     var disqus_identifier = "{{page.id}}";
     var disqus_url = "{{site.url}}{{page.url}}";
+
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
@@ -93,6 +99,7 @@ layout: default
     })();
 </script>
 {% endif %}
+
 
 {% if site.anchorjs %}
 <script>
@@ -104,15 +111,19 @@ layout: default
       if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
       s.parentNode.insertBefore(o, s);
     }
+</script>
+<script>
     async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
         anchors.options = {
           visible: 'hover',
           placement: 'right',
+          // icon: '#'
         };
         anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
     })
 </script>
 <style>
+    /* place left on bigger screen */
     @media all and (min-width: 800px) {
         .anchorjs-link{
             position: absolute;
@@ -122,12 +133,32 @@ layout: default
         }
     }
 </style>
-{% endif %}
 
+{% if include.type == 'post' %}
 <style type="text/css">
+    /* 文章页面样式 */
+    .post-container {
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    /* 窄屏设备下更宽的内容区域 */
+    @media (max-width: 768px) {
+        .post-container {
+            width: 92%;
+            padding-left: 4% !important; 
+            padding-right: 4% !important;
+        }
+    }
+    
+    /* 确保内容溢出处理 */
     .post-container .post-content {
         overflow-wrap: break-word;
     }
+    
+    /* 这里添加catalog样式 */
     .catalog-container {
         position: sticky;
         top: 70px;
@@ -135,4 +166,13 @@ layout: default
         overflow-y: auto;
         z-index: 100;
     }
+    
+    /* 响应式调整 */
+    @media (max-width: 768px) {
+        .catalog-container {
+            top: 60px;
+        }
+    }
 </style>
+{% endif %}
+{% endif %}
