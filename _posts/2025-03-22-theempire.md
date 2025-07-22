@@ -184,7 +184,7 @@ Original copyright (c) 1987 by Sandy Stone
 
 [^41]: Hoyer [134]
 [^42]: Hoyer [139]. 莉莉-埃尔伯的变性手术是在 1930 年进行的。在今天的美国，法学界对成功的男变女的看法仍然以缺乏为基础；例如：当“男性的生殖器官被完全和不可逆转地破坏”时，男人就是女人。[摘自一封授权在护照上更改姓名的诊所信函，1980 年]。
-[^43]: Hoyer [125]
+[^43]: Hoyer [125]。（这是个宗教学用语，由鲁道夫·奥托（Rudolf Otto）提出。参考朱东华老师《宗教学学术史问题研究》，Mysterium tremendum作“令人颤栗的神秘”。Mysterium tremendum是圣秘（das Numinose）的组成部分，圣秘一词用来形容一种不可言喻的神圣体验，指的是彼岸世界的超越性、身体感觉性和间接性。Mysterium tremendum作为“引人入胜的神秘”mysterium fascinosum一道，组成了圣秘的神圣体验。译者注）
 [^44]: Hoyer [139].在上述两段文字中，我请大家注意希腊文中的动词 endeuein（ένδέυειν），它指的是受洗的那一刻，即受洗者进入圣言（the Word)并被圣言所进入；enduein 可译为 " to enter into（进入)"，也可译为 " to put on, to insinuate oneself into, like a glove(穿上，像手套一样穿进去)"；即 " He [*sic*] who is baptized into Christ shall have put on Christ(受洗进入基督的人就穿上了基督)"。文中此处有着强烈的男同情色感（homoerotic），两种性别都同时存在于此，但都消失在被献祭的躯体中，参见贝尔纳迪诺·德萨阿贡（Fray Bernardino de Sahagun） 对仪式的描述，在仪式中，主持仪式的神父穿上了年轻女子剥下的皮肤（见 Frazer [589-91]）。(参考《圣经》加拉太书3:27  CUVMP Simplified，即“你们受洗归入基督的，都是披戴基督了”enduein在中文中翻译为“披戴”，贝尔纳迪诺·德萨阿贡的记录似乎是对阿兹特克人仪式的记录——译者注)
 [^47]: 这个问题的演变和处理本身就值得撰写一篇论文。参见Donald R. Laub and Patrick Gandy [eds.], 1973: "Proceedings of the Second Interdisciplinary Symposium on Gender Dysphoria Syndrome." Stanford: Division of Reconstructive and Rehabilitation Surgery, Stanford Medical Center, and in Janice M. Irvine, 1990: "Disorders Of Desire: Sex and gender in modern American sexology." Philadelphia:Temple University Press.
 [^46]:原谅我，我实在不知道engenderment应该怎么翻译了……这个词有性别生成，建构性别和生产、制造乃至分娩之物的含义，似乎这些含义都是从一个早已不用的“交媾”中产生的，朱迪斯·巴特勒似乎很喜欢这个词，请专家来谈一谈。
