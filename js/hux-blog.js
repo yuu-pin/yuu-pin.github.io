@@ -45,10 +45,12 @@ $(document).ready(function() {
 jQuery(document).ready(function($) {
     var MQL = 1170;
 
-    //primary navigation slide-in effect
+    // primary navigation slide-in effect
     if ($(window).width() > MQL) {
         var headerHeight = $('.navbar-custom').height(),
-            bannerHeight  = $('.intro-header .container').height();     
+            bannerHeight = $('.intro-header .container').height(),
+            disableScrollReveal = $('.post-container').length > 0;
+
         $(window).on('scroll', {
                 previousTop: 0
             },
@@ -56,29 +58,30 @@ jQuery(document).ready(function($) {
                 var currentTop = $(window).scrollTop(),
                     $catalog = $('.side-catalog');
 
-                //check if user is scrolling up by mouse or keyborad
-                if (currentTop < this.previousTop) {
-                    //if scrolling up...
+                if (disableScrollReveal) {
+                    $('.navbar-custom').removeClass('is-visible is-fixed');
+                } else if (currentTop < this.previousTop) {
                     if (currentTop > 0 && $('.navbar-custom').hasClass('is-fixed')) {
                         $('.navbar-custom').addClass('is-visible');
                     } else {
                         $('.navbar-custom').removeClass('is-visible is-fixed');
                     }
                 } else {
-                    //if scrolling down...
                     $('.navbar-custom').removeClass('is-visible');
-                    if (currentTop > headerHeight && !$('.navbar-custom').hasClass('is-fixed')) $('.navbar-custom').addClass('is-fixed');
+                    if (currentTop > headerHeight && !$('.navbar-custom').hasClass('is-fixed')) {
+                        $('.navbar-custom').addClass('is-fixed');
+                    }
                 }
+
                 this.previousTop = currentTop;
 
-
-                //adjust the appearance of side-catalog
-                $catalog.show()
+                $catalog.show();
                 if (currentTop > (bannerHeight + 41)) {
-                    $catalog.addClass('fixed')
+                    $catalog.addClass('fixed');
                 } else {
-                    $catalog.removeClass('fixed')
+                    $catalog.removeClass('fixed');
                 }
-            });
+            }
+        );
     }
 });
