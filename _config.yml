@@ -1,9 +1,9 @@
 # Site settings
 title: STRELYETS
-SEOTitle: 射手座之日 | STRELYETS
-header-img: img/home-bg.jpg
+SEOTitle: 灏勬墜搴т箣鏃?| STRELYETS
+header-img: img/home-bg_opt.jpg
 email: changyuupin@gmail.com
-description: "YuuPin的个人博客，此处会存在一些论文、读书报告和评论"
+description: "YuuPin鐨勪釜浜哄崥瀹紝姝ゅ浼氬瓨鍦ㄤ竴浜涜鏂囥€佽涔︽姤鍛婂拰璇勮"
 url: "https://yuu-pin.github.io" # your host, for absolute URL
 # baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -59,7 +59,7 @@ kramdown:
 
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
-sidebar-about-description: "小心二次元"
+sidebar-about-description: "灏忓績浜屾鍏?
 sidebar-avatar: img/116069941_p0_master1200.jpg # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
@@ -76,6 +76,6 @@ page-mathjax: false
 # Friends
 friends:
   [
-  #  { title: "乱序（Midare）", href: "http://mida.re/" },
+  #  { title: "涔卞簭锛圡idare锛?, href: "http://mida.re/" },
 
   ]
