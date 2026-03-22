@@ -10,30 +10,11 @@
  * Licensed under Apache 2.0 
  */
 
-// Tooltip Init
-// Unuse by Hux since V1.6: Titles now display by default so there is no need for tooltip
-// $(function() {
-//     $("[data-toggle='tooltip']").tooltip();
-// });
-
-
-// make all images responsive
-/* 
- * Unuse by Hux
- * actually only Portfolio-Pages can't use it and only post-img need it.
- * so I modify the _layout/post and CSS to make post-img responsive!
- */
-// $(function() {
-//  $("img").addClass("img-responsive");
-// });
-
-// responsive tables
 $(document).ready(function() {
     $("table").wrap("<div class='table-responsive'></div>");
     $("table").addClass("table");
 });
 
-// responsive embed videos
 $(document).ready(function() {
     $('iframe[src*="youtube.com"]').wrap('<div class="embed-responsive embed-responsive-16by9"></div>');
     $('iframe[src*="youtube.com"]').addClass('embed-responsive-item');
@@ -41,35 +22,48 @@ $(document).ready(function() {
     $('iframe[src*="vimeo.com"]').addClass('embed-responsive-item');
 });
 
-// Navigation Scripts to Show Header on Scroll-Up
 jQuery(document).ready(function($) {
-    var MQL = 1170;
+    var MQL = 1170,
+        $window = $(window),
+        $navbar = $('.navbar-custom'),
+        $catalog = $('.side-catalog'),
+        isPostPage = $('.post-container').length > 0,
+        headerHeight = $navbar.height(),
+        bannerHeight = $('.intro-header .container').height();
 
-    // primary navigation slide-in effect
-    if ($(window).width() > MQL) {
-        var headerHeight = $('.navbar-custom').height(),
-            bannerHeight = $('.intro-header .container').height(),
-            disableScrollReveal = $('.post-container').length > 0;
+    function updatePostNavbar() {
+        if (!isPostPage) {
+            return;
+        }
 
-        $(window).on('scroll', {
+        if ($window.scrollTop() > 0) {
+            $navbar.addClass('post-nav-hidden').removeClass('is-visible is-fixed');
+        } else {
+            $navbar.removeClass('post-nav-hidden');
+        }
+    }
+
+    updatePostNavbar();
+
+    if ($window.width() > MQL) {
+        $window.on('scroll', {
                 previousTop: 0
             },
             function() {
-                var currentTop = $(window).scrollTop(),
-                    $catalog = $('.side-catalog');
+                var currentTop = $window.scrollTop();
 
-                if (disableScrollReveal) {
-                    $('.navbar-custom').removeClass('is-visible is-fixed');
+                if (isPostPage) {
+                    updatePostNavbar();
                 } else if (currentTop < this.previousTop) {
-                    if (currentTop > 0 && $('.navbar-custom').hasClass('is-fixed')) {
-                        $('.navbar-custom').addClass('is-visible');
+                    if (currentTop > 0 && $navbar.hasClass('is-fixed')) {
+                        $navbar.addClass('is-visible');
                     } else {
-                        $('.navbar-custom').removeClass('is-visible is-fixed');
+                        $navbar.removeClass('is-visible is-fixed');
                     }
                 } else {
-                    $('.navbar-custom').removeClass('is-visible');
-                    if (currentTop > headerHeight && !$('.navbar-custom').hasClass('is-fixed')) {
-                        $('.navbar-custom').addClass('is-fixed');
+                    $navbar.removeClass('is-visible');
+                    if (currentTop > headerHeight && !$navbar.hasClass('is-fixed')) {
+                        $navbar.addClass('is-fixed');
                     }
                 }
 
@@ -83,5 +77,7 @@ jQuery(document).ready(function($) {
                 }
             }
         );
+    } else if (isPostPage) {
+        $window.on('scroll', updatePostNavbar);
     }
 });
