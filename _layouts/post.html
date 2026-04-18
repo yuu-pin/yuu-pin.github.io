@@ -156,35 +156,50 @@ layout: default
 
 <!-- 强制重置文章页面样式 -->
 <style type="text/css">
-    /* 重置所有可能的冲突样式 */
-    article .container .row .post-container {
+    /* 文章正文收口为更稳定的居中阅读宽度 */
+    article .container {
         width: 100% !important;
-        max-width: 960px !important;
+        max-width: 1200px !important;
         margin: 0 auto !important;
-        padding: 0 20px !important;
+    }
+    
+    article .container .row .post-container,
+    .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1.post-container {
+        float: none !important;
+        width: 100% !important;
+        max-width: 860px !important;
+        margin: 0 auto !important;
+        padding: 0 24px !important;
         position: relative !important;
         left: auto !important;
         right: auto !important;
         transform: none !important;
     }
     
-    /* 确保Bootstrap列的正确行为 */
-    .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1.post-container {
-        width: 66.66666667% !important;
-        margin-left: 16.66666667% !important;
-        padding-left: 15px !important;
-        padding-right: 15px !important;
+    @media (min-width: 1400px) {
+        .catalog-container {
+            position: fixed !important;
+            top: 110px !important;
+            right: calc((100vw - 1200px) / 2) !important;
+            width: 220px !important;
+            max-height: calc(100vh - 140px) !important;
+            padding: 0 !important;
+        }
+    }
+    
+    @media (max-width: 1399px) {
+        .catalog-container {
+            display: none !important;
+        }
     }
     
     /* 窄屏设备样式 */
     @media (max-width: 768px) {
         article .container .row .post-container,
         .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1.post-container {
-            width: 92% !important;
-            margin-left: 4% !important;
-            margin-right: 4% !important;
-            padding-left: 15px !important;
-            padding-right: 15px !important;
+            max-width: none !important;
+            padding-left: 18px !important;
+            padding-right: 18px !important;
         }
     }
     
@@ -198,9 +213,6 @@ layout: default
     
     /* Catalog容器样式 */
     .catalog-container {
-        position: sticky !important;
-        top: 70px !important;
-        max-height: calc(100vh - 80px) !important;
         overflow-y: auto !important;
         z-index: 100 !important;
     }
@@ -211,24 +223,11 @@ layout: default
         padding-right: 15px !important;
     }
     
-    /* 响应式调整 */
-    @media (max-width: 768px) {
-        .catalog-container {
-            top: 60px !important;
-        }
-    }
-    
     /* 确保article容器不会影响布局 */
     article {
         width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
-    }
-    
-    article .container {
-        width: 100% !important;
-        max-width: 1170px !important;
-        margin: 0 auto !important;
     }
 </style>
 {% endif %}

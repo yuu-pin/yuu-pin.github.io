@@ -62,7 +62,16 @@
     }
     
     
-    /* 文章列表居中显示 */
+    /* 首页 / 分页页的阅读列居中 */
+    .container .row > .postlist-container {
+        float: none;
+        width: 100%;
+        max-width: 860px;
+        margin: 0 auto;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    
     .post-preview-container {
         margin: 0 auto;
         text-align: center;
@@ -70,15 +79,28 @@
     
     .post-preview {
         text-align: left;
-        max-width: 960px;
-        margin: 0 auto 30px;
-        padding: 0 15px;
+        max-width: none;
+        margin: 0 0 36px;
+        padding: 0;
     }
     
-    /* 首页文章列表调整 */
-    .post-list-container {
-        margin: 0 auto;
-        max-width: 960px;
+    .postlist-container > hr {
+        margin: 28px 0;
+    }
+    
+    @media (max-width: 768px) {
+        .container .row > .postlist-container {
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+        
+        .post-preview {
+            margin-bottom: 28px;
+        }
+        
+        .postlist-container > hr {
+            margin: 22px 0;
+        }
     }
     
     /* 确保分页控件居中 */
@@ -138,6 +160,39 @@
     #featured-tags,
     #friends-list {
         display: none !important;
+    }
+    
+    /* 柔化点击与 focus 效果，去掉明显点击框 */
+    a,
+    button,
+    .btn,
+    .navbar-toggle,
+    input[type="button"],
+    input[type="submit"],
+    [role="button"] {
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    a:focus,
+    button:focus,
+    .btn:focus,
+    .navbar-toggle:focus,
+    input[type="button"]:focus,
+    input[type="submit"]:focus,
+    [role="button"]:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    
+    a:focus-visible,
+    button:focus-visible,
+    .btn:focus-visible,
+    .navbar-toggle:focus-visible,
+    input[type="button"]:focus-visible,
+    input[type="submit"]:focus-visible,
+    [role="button"]:focus-visible {
+        outline: 2px solid rgba(0, 133, 161, 0.35);
+        outline-offset: 3px;
     }
 </style>
 {% endif %}

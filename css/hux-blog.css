@@ -774,7 +774,7 @@ samp {
   font-family: "Fira Code", Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 .postlist-container {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 .post-container a {
   color: #337ab7;
@@ -1257,6 +1257,10 @@ samp {
 .post-preview > a {
   color: #404040;
 }
+.post-preview {
+  position: relative;
+  padding-bottom: 8px;
+}
 .post-preview > a:hover,
 .post-preview > a:focus {
   text-decoration: none;
@@ -1264,23 +1268,24 @@ samp {
 }
 .post-preview > a > .post-title {
   font-size: 21px;
-  line-height: 1.3;
-  margin-top: 30px;
-  margin-bottom: 8px;
+  line-height: 1.45;
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 .post-preview > a > .post-subtitle {
   font-size: 15px;
-  line-height: 1.3;
+  line-height: 1.7;
   margin: 0;
   font-weight: 300;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 .post-preview > .post-meta {
   font-family: 'Lora', 'Times New Roman', serif;
   color: #a3a3a3;
-  font-size: 16px;
+  font-size: 14px;
   font-style: italic;
-  margin-top: 0;
+  margin-top: 18px;
+  margin-bottom: 0;
 }
 .post-preview > .post-meta > a {
   text-decoration: none;
@@ -1293,28 +1298,28 @@ samp {
 }
 @media only screen and (min-width: 768px) {
   .post-preview > a > .post-title {
-    font-size: 26px;
-    line-height: 1.3;
-    margin-bottom: 10px;
+    font-size: 29px;
+    line-height: 1.42;
+    margin-bottom: 12px;
   }
   .post-preview > a > .post-subtitle {
-    font-size: 16px;
+    font-size: 17px;
   }
   .post-preview .post-meta {
-    font-size: 18px;
+    font-size: 15px;
   }
 }
 .post-content-preview {
-  font-size: 13px;
-  font-style: italic;
-  color: #a3a3a3;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #555555;
 }
 .post-content-preview:hover {
   color: #0085a1;
 }
 @media only screen and (min-width: 768px) {
   .post-content-preview {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 .section-heading {
