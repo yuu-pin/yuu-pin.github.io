@@ -213,8 +213,18 @@ layout: default
     
     /* Catalog容器样式 */
     .catalog-container {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
         overflow-y: auto !important;
         z-index: 100 !important;
+    }
+    
+    .catalog-container.catalog-visible {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
     
     /* 侧边栏容器重置 */

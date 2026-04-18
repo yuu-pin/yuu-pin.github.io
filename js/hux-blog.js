@@ -27,9 +27,42 @@ jQuery(document).ready(function($) {
         $window = $(window),
         $navbar = $('.navbar-custom'),
         $catalog = $('.side-catalog'),
+        $catalogContainer = $('.catalog-container'),
+        $postContainer = $('.post-container'),
         isPostPage = $('.post-container').length > 0,
         headerHeight = $navbar.height(),
         bannerHeight = $('.intro-header .container').height();
+
+    function getCatalogTriggerTop() {
+        if (!$postContainer.length) {
+            return bannerHeight + 41;
+        }
+
+        return Math.max(0, $postContainer.offset().top - 80);
+    }
+
+    function updateCatalogState(currentTop) {
+        if (!isPostPage || !$catalog.length || !$catalogContainer.length) {
+            return;
+        }
+
+        var catalogTriggerTop = getCatalogTriggerTop();
+
+        if (currentTop >= catalogTriggerTop) {
+            $catalogContainer.addClass('catalog-visible');
+            $catalog.show();
+        } else {
+            $catalogContainer.removeClass('catalog-visible');
+            $catalog.hide().removeClass('fixed');
+            return;
+        }
+
+        if (currentTop > (catalogTriggerTop + 41)) {
+            $catalog.addClass('fixed');
+        } else {
+            $catalog.removeClass('fixed');
+        }
+    }
 
     function updatePostNavbar() {
         if (!isPostPage) {
@@ -44,6 +77,7 @@ jQuery(document).ready(function($) {
     }
 
     updatePostNavbar();
+    updateCatalogState($window.scrollTop());
 
     if ($window.width() > MQL) {
         $window.on('scroll', {
@@ -69,15 +103,13 @@ jQuery(document).ready(function($) {
 
                 this.previousTop = currentTop;
 
-                $catalog.show();
-                if (currentTop > (bannerHeight + 41)) {
-                    $catalog.addClass('fixed');
-                } else {
-                    $catalog.removeClass('fixed');
-                }
+                updateCatalogState(currentTop);
             }
         );
     } else if (isPostPage) {
-        $window.on('scroll', updatePostNavbar);
+        $window.on('scroll', function() {
+            updatePostNavbar();
+            updateCatalogState($window.scrollTop());
+        });
     }
 });
