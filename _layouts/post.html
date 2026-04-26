@@ -66,8 +66,6 @@ layout: default
     <!-- Side Catalog Container -->
         {% unless page.no-catalog %}
             <div class="
-                col-lg-2 col-lg-offset-0
-                visible-lg-block
                 sidebar-container
                 catalog-container">
                 <div class="side-catalog">
@@ -176,7 +174,7 @@ layout: default
         transform: none !important;
     }
     
-    @media (min-width: 1400px) {
+    @media (min-width: 1200px) {
         .catalog-container {
             position: fixed !important;
             top: 110px !important;
@@ -187,7 +185,7 @@ layout: default
         }
     }
     
-    @media (max-width: 1399px) {
+    @media (max-width: 1199px) {
         .catalog-container {
             display: none !important;
         }
