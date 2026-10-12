@@ -10,7 +10,7 @@
 // CacheStorage is shared between all sites under same domain.
 // A namespace can prevent potential name conflicts and mis-deletion.
 const CACHE_NAMESPACE = 'main-';
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3';
 const CACHE = `${CACHE_NAMESPACE}precache-then-runtime-${CACHE_VERSION}`;
 const OFFLINE_URL = './offline.html';
 
@@ -18,13 +18,12 @@ const PRECACHE_LIST = [
   './',
   OFFLINE_URL,
   './js/jquery.min.js',
-  './js/bootstrap.min.js',
   './js/hux-blog.min.js',
   './js/snackbar.js',
-  './css/hux-blog.min.css',
+  './css/hux-blog.css',
   './css/bootstrap.min.css',
   './img/icon_wechat.png',
-  './img/home-bg.jpg',
+  './img/home-bg_opt.jpg',
   './pwa/manifest.json',
   './pwa/icons/128.png',
   './pwa/icons/512.png'
@@ -120,15 +119,34 @@ async function cacheFirst(request) {
   return fetchAndCache(request);
 }
 
-async function networkFirst(request) {
+// Serve from cache immediately and refresh it in the background, so edits to
+// same-origin CSS/JS reach returning visitors on their next page view.
+async function staleWhileRevalidate(event, request) {
+  const cachedResponse = await caches.match(request);
+  const networkResponse = fetchAndCache(request);
+
+  if (cachedResponse) {
+    event.waitUntil(networkResponse.catch(() => {}));
+    return cachedResponse;
+  }
+
+  return networkResponse;
+}
+
+async function networkFirst(event, request) {
   const cachedResponsePromise = caches.match(request);
 
   try {
     const response = await fetch(getCacheBustingUrl(request), { cache: 'no-store' });
 
     if (response && response.ok) {
+      const cachedResponse = await cachedResponsePromise;
       const cache = await caches.open(CACHE);
-      await cache.put(request, response.clone());
+      event.waitUntil(cache.put(request, response.clone()));
+
+      if (isNavigationReq(request)) {
+        event.waitUntil(revalidateContent(cachedResponse, response.clone()));
+      }
     }
 
     return response;
@@ -186,27 +204,23 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  if (requestUrl.hostname === self.location.hostname && /\.(?:css|js)$/i.test(requestUrl.pathname)) {
+    event.respondWith(staleWhileRevalidate(event, request));
+    return;
+  }
+
   if (request.url.indexOf('ys.static') > -1 || isStaticAssetRequest(request)) {
     event.respondWith(cacheFirst(request));
     return;
   }
 
-  const cached = caches.match(request);
-  const fetched = fetch(getCacheBustingUrl(request), { cache: 'no-store' });
-  const fetchedCopy = fetched.then((resp) => resp.clone());
-
-  event.respondWith(networkFirst(request));
-
-  if (isNavigationReq(request)) {
-    console.log(`fetch ${request.url}`);
-    event.waitUntil(revalidateContent(cached, fetchedCopy));
-  }
+  // A single network request serves the page and feeds the update check.
+  event.respondWith(networkFirst(event, request));
 });
 
 function sendMessageToAllClients(msg) {
   self.clients.matchAll().then((clients) => {
     clients.forEach((client) => {
-      console.log(client);
       client.postMessage(msg);
     });
   });
@@ -218,23 +232,18 @@ function sendMessageToClientsAsync(msg) {
   }, 1000);
 }
 
-function revalidateContent(cachedResp, fetchedResp) {
-  return Promise.all([cachedResp, fetchedResp])
-    .then(([cached, fetched]) => {
-      if (!cached || !fetched) {
-        return;
-      }
+async function revalidateContent(cached, fetched) {
+  if (!cached || !fetched) {
+    return;
+  }
 
-      const cachedVer = cached.headers.get('last-modified');
-      const fetchedVer = fetched.headers.get('last-modified');
-      console.log(`"${cachedVer}" vs. "${fetchedVer}"`);
+  const cachedVer = cached.headers.get('last-modified');
+  const fetchedVer = fetched.headers.get('last-modified');
 
-      if (cachedVer && fetchedVer && cachedVer !== fetchedVer) {
-        sendMessageToClientsAsync({
-          command: 'UPDATE_FOUND',
-          url: fetched.url
-        });
-      }
-    })
-    .catch((err) => console.log(err));
+  if (cachedVer && fetchedVer && cachedVer !== fetchedVer) {
+    sendMessageToClientsAsync({
+      command: 'UPDATE_FOUND',
+      url: fetched.url
+    });
+  }
 }

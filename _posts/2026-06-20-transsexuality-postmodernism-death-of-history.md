@@ -4,7 +4,7 @@ title:      "变性，后现代主义和历史之死"
 date:       2026-06-20 23:11:00
 author:     "YuuPin"
 译者:
-header-img: "img/hacg.me_19.jpg"
+header-img: "img/hacg.me_19_opt.jpg"
 catalog: true
 tags: 性别研究
 ---

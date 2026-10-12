@@ -25,7 +25,7 @@ layout: default
                     {% include multilingual-sel.html %}
                 {% endif %}
 
-				{{ content }}
+				{{ content | replace: '<img src=', '<img loading="lazy" decoding="async" src=' }}
 
                 <hr style="visibility: hidden;">
                 <ul class="pager">

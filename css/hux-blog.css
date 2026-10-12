@@ -69,7 +69,7 @@
   display: none;
 }
 .side-catalog .catalog-toggle::before {
-  content: "鈭?;
+  content: "−";
   position: relative;
   margin-right: 5px;
   bottom: 1px;
@@ -1311,6 +1311,7 @@ samp {
 }
 .post-content-preview {
   font-size: 15px;
+  font-style: italic;
   line-height: 1.9;
   color: #555555;
 }
@@ -1700,7 +1701,7 @@ img::-moz-selection {
   overflow-y: hidden;
 }
 
-/* 娣诲姞鍒颁綘鐨勮嚜瀹氫箟CSS鏂囦欢 */
+/* 添加到你的自定义CSS文件 */
 .navbar-default .navbar-brand,
 .navbar-default .navbar-nav > li > a {
   transition: color 0.3s ease;
@@ -1710,7 +1711,7 @@ img::-moz-selection {
   transition: background-color 0.3s ease;
 }
 
-/* 鍚戜笅婊戝姩鎻愮ず鏍峰紡 */
+/* 向下滑动提示样式 */
 .scroll-down-hint {
   position: absolute;
   bottom: 30px;
@@ -1723,7 +1724,7 @@ img::-moz-selection {
   text-shadow: 0 1px 2px rgba(0,0,0,0.6);
 }
 
-/* 闂儊绠ご鏍峰紡 */
+/* 闪烁箭头样式 */
 .arrow-down {
   margin-top: 8px;
   animation: blink 2s infinite;
@@ -1733,14 +1734,14 @@ img::-moz-selection {
   font-size: 24px;
 }
 
-/* 闂儊鍔ㄧ敾 */
+/* 闪烁动画 */
 @keyframes blink {
   0% { opacity: 0.3; transform: translateY(0); }
   50% { opacity: 1; transform: translateY(5px); }
   100% { opacity: 0.3; transform: translateY(0); }
 }
 
-/* 鍙湪澶у睆骞曡澶囦笂鏄剧ず鍚戜笅婊戝姩鎻愮ず */
+/* 只在大屏幕设备上显示向下滑动提示 */
 @media (max-width: 768px) {
   .scroll-down-hint {
       display: none;

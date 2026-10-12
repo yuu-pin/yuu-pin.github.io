@@ -94,11 +94,6 @@
             if (e.target.className == 'icon-bar') return;
             __HuxNav__.close();
         })
-        document.addEventListener('click', function (e) {
-            if (e.target == $toggle) return;
-            if (e.target.className == 'icon-bar') return;
-            __HuxNav__.close();
-        })
         
         // 这里添加你的新代码
         document.addEventListener('DOMContentLoaded', function() {
@@ -110,7 +105,6 @@
             // 创建一个隐藏的canvas来分析图像
             var canvas = document.createElement('canvas');
             var context = canvas.getContext('2d');
-            var navbarRect = navbar.getBoundingClientRect();
             var headerComputedStyle = window.getComputedStyle(header);
             var headerBgColor = headerComputedStyle.backgroundColor;
             var headerBgImage = headerComputedStyle.backgroundImage;
@@ -118,7 +112,7 @@
             // 如果有背景图片，需要加载并分析
             if (headerBgImage !== 'none') {
               var img = new Image();
-              img.crossOrigin = "Anonymous";
+              // 同源图片不需要 crossOrigin；加了反而会绕过已缓存/预加载的背景图，导致重复下载
               img.onload = function() {
                 analyzeBackground(img);
               };
@@ -142,15 +136,21 @@
           
           // 分析背景图像
           function analyzeBackground(img) {
-            canvas.width = navbarRect.width;
-            canvas.height = navbarRect.height;
+            // 只求平均亮度，缩到很小的画布即可，避免读取整条导航栏宽度的像素
+            canvas.width = 32;
+            canvas.height = 16;
             
             // 在canvas上绘制header的对应区域
             context.drawImage(img, 0, 0, img.width, img.height, 
                              0, 0, canvas.width, canvas.height);
             
             // 获取像素数据
-            var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+            var imageData;
+            try {
+              imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+            } catch (err) {
+              return; // 跨域图片会污染画布，保持默认颜色
+            }
             var pixels = imageData.data;
             var totalBrightness = 0;
             var pixelCount = 0;
