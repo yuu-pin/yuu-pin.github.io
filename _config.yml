@@ -60,7 +60,7 @@ kramdown:
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
 sidebar-about-description: "小心二次元"
-sidebar-avatar: img/116069941_p0_master1200.jpg # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: img/avatar.jpg # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
 featured-tags: true # whether or not using Feature-Tags
