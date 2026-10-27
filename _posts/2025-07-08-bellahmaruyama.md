@@ -2,7 +2,7 @@
 layout:     post
 title:      "新教徒的想象力：贝拉、丸山真男和日本思想研究"
 date:       2025-07-08 23:43:00
-author:     "YuuPin"
+author:     "Mizuniwa Mikage"
 header-img: "img/04_header.jpg"
 catalog: true
 tags: 政治研究

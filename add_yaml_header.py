@@ -19,7 +19,7 @@ def add_yaml_header(file_path, title=""):
 layout:     post
 title:      "{title}"
 date:       {current_time}
-author:     "YuuPin"
+author:     "Mizuniwa Mikage"
 header-img: "img/83506320_p0.png"
 catalog: true
 tags:

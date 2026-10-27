@@ -2,7 +2,7 @@
 layout:     post
 title:      "变性，后现代主义和历史之死"
 date:       2026-06-20 23:11:00
-author:     "YuuPin"
+author:     "Mizuniwa Mikage"
 译者:
 header-img: "img/hacg.me_19_opt.jpg"
 catalog: true

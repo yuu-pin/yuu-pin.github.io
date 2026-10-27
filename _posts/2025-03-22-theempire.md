@@ -2,7 +2,7 @@
 layout:     post
 title:      "帝国反击：一个后变性宣言"
 date:       2025-03-22 19:53:00
-author:     "YuuPin"
+author:     "Mizuniwa Mikage"
 header-img: "img/83506320_p0_header.jpg"
 catalog: true
 tags: 性别研究
@@ -20,7 +20,7 @@ ACTLab
 
 Original copyright (c) 1987 by Sandy Stone
 
-**译者：Yuu-Pin**
+**译者：Mizuniwa Mikage**
 
 2025.3.22 首次发布
 

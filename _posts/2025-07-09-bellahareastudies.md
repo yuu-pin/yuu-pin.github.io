@@ -2,7 +2,7 @@
 layout:     post
 title:      "地域研究与社会思想的对话：罗伯特·贝拉对日本的研究"
 date:       2025-07-09
-author:     "YuuPin"
+author:     "Mizuniwa Mikage"
 header-img: "img/130852450_p0_master1200.jpg"
 catalog: true
 tags: 政治研究
