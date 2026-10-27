@@ -4,7 +4,7 @@ SEOTitle: 射手座之日 | STRELYETS
 header-img: img/home-bg_opt.jpg
 email: changyuupin@gmail.com
 description: "Mizuniwa Mikage的个人博客，此处会存在一些论文、读书报告和评论"
-url: "https://yuu-pin.github.io" # your host, for absolute URL
+url: "https://mizuniwa-mikage.github.io" # your host, for absolute URL
 # baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
@@ -14,7 +14,7 @@ future: true
 RSS: false
 # weibo_username: huxpro
 # zhihu_username: huxpro
-github_username: yuu-pin
+github_username: mizuniwa-mikage
 twitter_username: nomosdesu
 #facebook_username:  huxpro
 #linkedin_username:  firstname-lastname-idxxxx
